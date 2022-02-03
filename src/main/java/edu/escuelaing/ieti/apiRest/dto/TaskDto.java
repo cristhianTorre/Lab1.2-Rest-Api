@@ -1,32 +1,22 @@
-package edu.escuelaing.ieti.apiRest.data;
+package edu.escuelaing.ieti.apiRest.dto;
+
+import edu.escuelaing.ieti.apiRest.data.Status;
 
 import java.util.Date;
 
-public class Task {
-    private String id;
+public class TaskDto {
     private String name;
     private String description;
     private Status status;
     private String assignedTo;
     private Date dueDate;
-    private String created;
 
-    public Task(String id, String name, String description, String status, String assignedTo, Date dueDate, String created){
-        this.id = id;
+    public TaskDto(String name, String description, String status, String assignedTo, Date dueDate) {
         this.name = name;
         this.description = description;
         this.status = Status.valueOf(status);
         this.assignedTo = assignedTo;
         this.dueDate = dueDate;
-        this.created = created;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -67,13 +57,5 @@ public class Task {
 
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
-    }
-
-    public String getCreated() {
-        return created;
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
     }
 }
